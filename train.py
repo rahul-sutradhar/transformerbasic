@@ -102,11 +102,11 @@ def train_model(config):
         optimizer.load_state_dict(state['optimizer_state_dict'])
         global_step = state['global_step']
 
-    loss_fn = nn.CrossEntropyLoss(ignore_index=tokenizer_src.token_to_id('[PAD]'), label_smooting=0.1).to(device)
+    loss_fn = nn.CrossEntropyLoss(ignore_index=tokenizer_src.token_to_id('[PAD]'), label_smoothing=0.1).to(device)
 
     for epoch in range(initial_epoch, config['num_epochs']):
         model.train()
-        batch_iterator = tqdm(train_dataloader, desac=f'Processing epoch {epoch:02d}')
+        batch_iterator = tqdm(train_dataloader, desc=f'Processing epoch {epoch:02d}')
         for batch in batch_iterator:
             encoder_input = batch['encoder_input'].to(device)   # (B, Seq_len)
             decoder_input = batch['decoder_input'].to(device)   # (B, Seq_len)

@@ -5,7 +5,7 @@
   "added_tokens": [
     {
       "id": 0,
-      "content": "UNK]",
+      "content": "[UNK]",
       "single_word": false,
       "lstrip": false,
       "rstrip": false,
@@ -49,7 +49,7 @@
   "model": {
     "type": "WordLevel",
     "vocab": {
-      "UNK]": 0,
+      "[UNK]": 0,
       "[PAD]": 1,
       "[SOS]": 2,
       "[EOS]": 3,
